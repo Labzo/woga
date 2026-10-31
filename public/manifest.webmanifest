@@ -1,0 +1,12 @@
+{
+  "name": "WoGA – Workstation & Gaming",
+  "short_name": "WoGA",
+  "start_url": ".",
+  "display": "standalone",
+  "background_color": "#13202b",
+  "theme_color": "#13202b",
+  "icons": [
+    { "src": "icon-256.png", "sizes": "256x256", "type": "image/png" },
+    { "src": "icon-512.png", "sizes": "512x512", "type": "image/png" }
+  ]
+}

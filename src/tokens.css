@@ -1,0 +1,45 @@
+/* WoGA (Wo&Ga) – design tokenek, v0.1 (2026-10-31) */
+:root {
+  /* Márkaszínek: Wo = Workstation, Ga = Gaming */
+  --woga-wo: #e0761c;          /* narancs – Workstation */
+  --woga-ga: #4cb86e;          /* zöld – Gaming */
+  --woga-ink: #13202b;         /* sötét alap, szöveg világos témán */
+  --woga-paper: #ffffff;
+
+  /* Állapotszínek (Labzo, 2026-10-31) */
+  --woga-status-open: #2e9e5b;     /* zöld: elkészült és nyílt */
+  --woga-status-invite: #2f7fd1;   /* kék: elkészült, csak meghívóval */
+  --woga-status-dev: #e2ad00;      /* sárga: fejlesztés alatt */
+  --woga-status-soon: #d64545;     /* piros: ezek jönnek */
+
+  /* Felület – világos téma */
+  --woga-bg: #eef2f5;
+  --woga-surface: #ffffff;
+  --woga-border: #d5dde3;
+  --woga-text: #13202b;
+  --woga-text-muted: #5b6b78;
+
+  /* Betű, forma, tér */
+  --woga-font: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  --woga-font-mono: "JetBrains Mono", ui-monospace, monospace;
+  --woga-radius-tile: 22%;     /* app-ikon csempe */
+  --woga-radius-card: 16px;
+  --woga-radius-control: 10px;
+  --woga-space: 8px;           /* minden térköz ennek többszöröse */
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --woga-bg: #0c151d;
+    --woga-surface: #13202b;
+    --woga-border: #26394a;
+    --woga-text: #eef2f5;
+    --woga-text-muted: #9fb0bd;
+  }
+}
+:root[data-theme="dark"] {
+  --woga-bg: #0c151d;
+  --woga-surface: #13202b;
+  --woga-border: #26394a;
+  --woga-text: #eef2f5;
+  --woga-text-muted: #9fb0bd;
+}

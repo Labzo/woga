@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="hu">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#13202b" />
+  <title>WoGA</title>
+  <link rel="icon" href="favicon.ico" />
+  <link rel="manifest" href="manifest.webmanifest" />
+</head>
+<body>
+  <header class="top">
+    <img class="mark" src="ikonok/app/woga_sotet.svg" alt="" />
+    <div class="brand">
+      <h1>WoGA</h1>
+      <p data-t="tagline"></p>
+    </div>
+    <div class="frame" id="frame"></div>
+    <button class="lang" id="lang" type="button"></button>
+  </header>
+  <p class="preview" data-t="preview"></p>
+  <main>
+    <div class="bar" role="group" id="filters"></div>
+    <section class="grid" id="grid" aria-live="polite"></section>
+    <p class="empty" id="empty" hidden></p>
+    <ul class="legend" id="legend"></ul>
+  </main>
+  <footer data-t="footer"></footer>
+  <dialog id="detail"></dialog>
+  <script type="module" src="/src/main.ts"></script>
+</body>
+</html>

@@ -1,0 +1,81 @@
+{
+  "$schema_version": "0.2",
+  "updated": "2026-10-31",
+  "frame": {
+    "id": "woga",
+    "name": "WoGA (Wo&Ga)",
+    "status": "dev"
+  },
+  "apps": [
+    {
+      "order": 1,
+      "id": "enro",
+      "name": "ENRO",
+      "kind": "gaming",
+      "status": "dev",
+      "run": "web",
+      "icon": "ikonok/app/enro_sotet.svg",
+      "summary": {
+        "hu": "Europ Night Racing Online – Európai Éjszakai Futam Online. Igor kedvence 😉",
+        "en": "Europ Night Racing Online. Igor’s favourite 😉"
+      },
+      "license": "AGPL-3.0 + CC BY-NC-SA",
+      "url": null,
+      "inviteHash": null
+    },
+    {
+      "order": 2,
+      "id": "diasge",
+      "name": "DiAsGe",
+      "kind": "workstation",
+      "status": "soon",
+      "run": "server",
+      "icon": "ikonok/app/diasge_sotet.svg",
+      "summary": {
+        "hu": "Digitális asszisztens generátor: digitális ikerből saját nevű asszisztens, a szerveren.",
+        "en": "Digital assistant generator: a named assistant built from a digital twin, on your own server."
+      },
+      "license": "GPL-3.0",
+      "url": null,
+      "inviteHash": null
+    },
+    {
+      "order": 3,
+      "id": "aero",
+      "name": "AERO",
+      "kind": "gaming",
+      "status": "soon",
+      "run": "desktop",
+      "icon": "ikonok/app/aero_sotet.svg",
+      "summary": {
+        "hu": "Vasúti cégmenedzselő játék.",
+        "en": "Railway company management game."
+      },
+      "license": "privát",
+      "url": null,
+      "inviteHash": null
+    },
+    {
+      "order": 4,
+      "id": "adge",
+      "name": "AdGe",
+      "kind": "workstation",
+      "status": "soon",
+      "run": "desktop",
+      "icon": "ikonok/app/adge_sotet.svg",
+      "summary": {
+        "hu": "Hirdetés generátor bárkinek: szöveg és kép.",
+        "en": "Ad generator for anyone: text and images."
+      },
+      "license": "GPL-3.0",
+      "url": null,
+      "inviteHash": null
+    }
+  ],
+  "status_values": {
+    "open": "zöld",
+    "invite": "kék",
+    "dev": "sárga",
+    "soon": "piros"
+  }
+}
