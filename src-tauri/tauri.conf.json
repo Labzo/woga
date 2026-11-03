@@ -38,6 +38,9 @@
       "nsis": {
         "installMode": "currentUser",
         "languages": ["Hungarian", "English"],
+        "customLanguageFiles": {
+          "Hungarian": "nsis/Hungarian.nsh"
+        },
         "displayLanguageSelector": true
       }
     },
