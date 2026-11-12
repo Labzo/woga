@@ -25,10 +25,38 @@ export interface Catalog {
 
 const STATUSES: Status[] = ['open', 'invite', 'dev', 'soon'];
 
+/** A katalógus élő példánya a nyilvános GitHub-tárolóban (main ág). */
+export const GITHUB_CATALOG_URL =
+  'https://raw.githubusercontent.com/Labzo/woga/main/public/katalogus.json';
+
+/** Igaz, ha a WoGA natív asztali programként (Tauri) fut, nem böngészőben. */
+export function isDesktop(): boolean {
+  return typeof window !== 'undefined' && '__TAURI_INTERNALS__' in window;
+}
+
+async function fetchCatalog(url: string, timeoutMs?: number): Promise<Catalog> {
+  const ctrl = new AbortController();
+  const timer = timeoutMs ? setTimeout(() => ctrl.abort(), timeoutMs) : undefined;
+  try {
+    const res = await fetch(url, { cache: 'no-cache', signal: ctrl.signal });
+    if (!res.ok) throw new Error(`HTTP ${res.status}`);
+    return (await res.json()) as Catalog;
+  } finally {
+    if (timer) clearTimeout(timer);
+  }
+}
+
+/**
+ * Asztali programban a GitHubról szinkronizál (mindig a legfrissebb katalógus),
+ * internet nélkül vagy hibánál a beépített példányra esik vissza. Böngészőben a helyi fájlt olvassa.
+ */
 export async function loadCatalog(url = 'katalogus.json'): Promise<Catalog> {
-  const res = await fetch(url, { cache: 'no-cache' });
-  if (!res.ok) throw new Error(`HTTP ${res.status}`);
-  const data = (await res.json()) as Catalog;
+  let data: Catalog | null = null;
+  if (isDesktop()) {
+    try { data = await fetchCatalog(GITHUB_CATALOG_URL, 6000); }
+    catch { data = null; }
+  }
+  if (!data) data = await fetchCatalog(url);
   if (!Array.isArray(data.apps)) throw new Error('apps missing');
   data.apps = data.apps
     .filter(a => STATUSES.includes(a.status))
